@@ -20,8 +20,8 @@ function BackgroundImage(){
           <motion.img 
             key={key}
             layoutId={transitionData.imageBackground}
-            initial={{scaleX: 0}}
-            animate={{scaleX : 1, transformOrigin: "right"}}
+            initial={{scale: 0}}
+            animate={{scale : 1, transformOrigin: "right"}}
             transition={{ type: "spring", damping: 20, stiffness: 100, duration: 1}}
             className="absolute w-screen h-screen z-0 brightness-50 object-cover"
             alt={`Image du projet ${transitionData.title}`} 
