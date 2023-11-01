@@ -18,11 +18,11 @@ export default function Home() {
     </Head>
     <DataProvider>
       <Provider store={store}>
-        <main className={`relative h-screen select-none overflow-hidden text-white antialiased bg-black`}>
+        <main className={`relative h-full min-h-screen select-none xl:overflow-hidden lg:overflow-hidden md:overflow-hidden text-white antialiased bg-black`}>
           <AnimatePresence>
             <BackgroundImage/>
             <Header/>
-            <div className='flex absolute left-4 bottom-[30%] h-[350px] w-full sm:flex-col sm:left-0 sm:gap-4 sm:bottom-[50%]'>
+            <div className='flex absolute left-4 xl:bottom-[30%] lg:bottom-[30%] md:bottom-[30%] h-[350px] w-full sm:flex-col sm:left-0 sm:gap-8 sm:relative'>
               <InfoProject/>
               <Slides/> 
             </div>

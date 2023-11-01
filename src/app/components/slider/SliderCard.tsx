@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Project } from "../../contexts/data";
 import { clickProject } from "../../redux/slices/projectSlice";
 import { ProjectState } from "../../redux/slices/projectSlice";
+import Image from "next/image";
 
 function SliderCard({ id, type, date, title, location, imageMiniature, imageBackground, video, pictures }: Project) {
   const dispatch = useDispatch();
@@ -19,11 +20,9 @@ function SliderCard({ id, type, date, title, location, imageMiniature, imageBack
       transition={{ type: "spring", damping: 20, stiffness: 100}}
       onClick={()=> {dispatch(clickProject(id))}}
       >  
-      <motion.img
-        alt="Image de"
-        src={imageMiniature}
-        className=" absolute h-full w-full rounded-2xl object-cover"
-      />
+      <motion.div className=" absolute h-full w-full">
+        <Image src={imageMiniature} alt={`Image du projet ${title}`} fill sizes="30vw" className="rounded-2xl object-cover"/>
+      </motion.div>
       <motion.div className=" absolute z-10 flex h-full items-end p-4">
         <motion.div>
           <motion.div layout className=" mb-2 h-[2px] w-3 rounded-full bg-white"></motion.div>

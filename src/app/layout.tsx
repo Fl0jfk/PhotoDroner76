@@ -1,12 +1,17 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'PhotoDroner76',
   description: 'Professionnel de prises de vues aériennes avec drone.',
-  themeColor: "black",
   appleWebApp: true,
-  viewport: "width=device-width, initial-scale=1, viewport-fit=cover"
+}
+
+export const viewport: Viewport ={
+  themeColor: "black",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover"
 }
 
 export default function RootLayout({

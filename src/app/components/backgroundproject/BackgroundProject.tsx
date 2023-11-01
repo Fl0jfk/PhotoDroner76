@@ -5,6 +5,7 @@ import { useData } from "../../contexts/data";
 import { useSelector } from "react-redux";
 import { ProjectState } from "../../redux/slices/projectSlice";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 function BackgroundImage(){
     const data = useData();
@@ -17,16 +18,17 @@ function BackgroundImage(){
     return (
       <>
         {transitionData && 
-          <motion.img 
+          <motion.div 
             key={key}
             layoutId={transitionData.imageBackground}
             initial={{scale: 0}}
-            animate={{scale : 1, transformOrigin: "right"}}
+            animate={{scale : 1}}
             transition={{ type: "spring", damping: 20, stiffness: 100, duration: 1}}
-            className="absolute w-screen h-screen z-0 brightness-50 object-cover"
-            alt={`Image du projet ${transitionData.title}`} 
-            src={transitionData.imageBackground}
-          /> 
+            className="absolute min-w-screen min-h-screen w-full h-full z-0 brightness-50 object-cover"
+            style={{transformOrigin: "right"}}
+          > 
+            <Image src={transitionData.imageBackground} alt={`Image du projet ${transitionData.title}`} fill quality={50} sizes="100vw"/>
+          </motion.div>
         }
       </>
     );

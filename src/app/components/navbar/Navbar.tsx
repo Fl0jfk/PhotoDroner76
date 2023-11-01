@@ -10,7 +10,7 @@ function Navbar({menuOpened, onLinkClick} :NavbarProps ){
     const data = useData();
     const [clickOnLink, setClickOnLink] = useState(menuOpened);
     const menuOpen = (clickOnLink ? "" : "hidden");
-    const bgMenuOpen = (clickOnLink ? "linear-gradient(to top, #404040 0%, black 100%)" : ""  );
+    const bgMenuOpen = (clickOnLink ? "black" : ""  );
     const handleLinkClick = () => {
         setClickOnLink(false);
         onLinkClick({ clickOnLink: false });
@@ -27,16 +27,16 @@ function Navbar({menuOpened, onLinkClick} :NavbarProps ){
         <>
             <AnimatePresence>
                 {menuOpened && <motion.nav 
-                    style={{background: `${bgMenuOpen}`}} 
+                    style={{background: `${bgMenuOpen}`, opacity:0.9}} 
                     className={`md:${menuOpen} sm:${menuOpen} gap-10 text-4xl flex flex-col top-0 left-0 fixed justify-center items-center top-0 left-0 w-full h-[100vh] z-[9] xl:hidden lg:hidden`}
                     initial={{translateX: "100%"}}
                     animate={{translateX: "0%", transition:{duration: 0.5, ease: "easeInOut"}}}
                     exit={{translateX:"100%", transition:{duration: 0.5, ease: "easeInOut"}}}
                     >
-                     <div className='w-2/12 h-[100px] md:h-[50px] sm:h-[30px] flex items-center justify-center pt-4'>
+                    <div className='w-2/12 h-[100px] md:h-[50px] sm:h-[50px] flex items-center justify-center pt-4 w-full'>
                         {data.profile.enterpriselogo && 
-                        <Link className='hover:scale-110' href={"/"} onClick={handleLinkClick} aria-label="Link to top">
-                            <Image src={data.profile.enterpriselogo} alt='Logo de PhotoDroner76' width={100} height={100} className='cursor-pointer z-[8]'/>
+                        <Link className='hover:scale-110 flex items-center justify-center' href={"/"} onClick={handleLinkClick} aria-label="Link to top">
+                            <Image src={data.profile.enterpriselogo} alt='Logo de PhotoDroner76' width={150} height={100} className='cursor-pointer z-[8]'/>
                         </Link>
                         }
                     </div>
