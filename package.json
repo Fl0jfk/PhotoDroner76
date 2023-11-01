@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "latest",
+    "@types/nodemailer": "^6.4.13",
     "framer-motion": "latest",
     "next": "latest",
+    "nodemailer": "^6.9.7",
     "react": "latest",
     "react-dom": "latest",
+    "react-hook-form": "^7.47.0",
     "react-redux": "latest"
   },
   "devDependencies": {

@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/header/Header";
+import Footer from './components/footer/Footer';
 import BackgroundImage from "./components/backgroundproject/BackgroundProject";
 import Slides from "./components/slider/Slides";
 import InfoProject from './components/infoproject/InfoProject';
@@ -18,7 +19,7 @@ export default function Home() {
     </Head>
     <DataProvider>
       <Provider store={store}>
-        <main className={`relative h-full min-h-[100vh] min-w-[100vw] sm:min-h-[200vh] w-full select-none xl:overflow-hidden lg:overflow-hidden md:overflow-hidden text-white antialiased bg-black`}>
+        <main className={`relative h-full min-h-[100vh] min-w-[100vw] sm:min-h-[230vh] w-full select-none xl:overflow-hidden lg:overflow-hidden md:overflow-hidden text-white antialiased bg-black`}>
           <AnimatePresence>
             <BackgroundImage/>
             <Header/>
@@ -26,6 +27,7 @@ export default function Home() {
               <InfoProject/>
               <Slides/> 
             </div>
+            <Footer/>
           </AnimatePresence>
         </main>
       </Provider>

@@ -9,7 +9,6 @@ import Image from "next/image";
 function SliderCard({ id, type, date, title, location, imageMiniature, imageBackground, video, pictures }: Project) {
   const dispatch = useDispatch();
   const test = useSelector((state:ProjectState) => state.project.id);
-  console.log(test)
   return ( 
     <motion.div
       className="relative min-w-[200px] h-[350px] rounded-2xl shadow-md cursor-pointer ml-6" 
@@ -21,7 +20,7 @@ function SliderCard({ id, type, date, title, location, imageMiniature, imageBack
       onClick={()=> {dispatch(clickProject(id))}}
       >  
       <motion.div className=" absolute h-full w-full">
-        <Image src={imageMiniature} alt={`Image du projet ${title}`} fill sizes="30vw" className="rounded-2xl object-cover"/>
+        <Image src={imageMiniature} alt={`Image du projet ${title}`} fill sizes="50vw" className="rounded-2xl object-cover"/>
       </motion.div>
       <motion.div className=" absolute z-10 flex h-full items-end p-4">
         <motion.div>
