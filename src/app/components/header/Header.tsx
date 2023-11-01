@@ -18,21 +18,20 @@ function Header(){
         setMenuOpened(clickOnLink);
     };
     return (
-        <motion.header 
-            className={`flex p-4 justify-between w-full md:fixed sm:fixed z-[12] max-w-[1440px]`}>
-                <div className='w-2/12 sm:w-4/12 flex items-center justify-center'>
-                    {data.profile.enterpriselogo && 
-                        <Link href="/" className='w-full cursor-pointer z-[8]'>
-                            <Image src={data.profile.enterpriselogo} alt='Logo de PhotoDroner76' width={150} height={100} sizes='30vw'/>
-                        </Link>
-                    }
+        <motion.header className={`flex p-4 justify-between w-full md:fixed z-[12] max-w-[1440px]`}>
+            <div className='w-2/12 sm:w-4/12 flex items-center justify-center'>
+                {data.profile.enterpriselogo && 
+                    <Link href="/" className='w-full cursor-pointer z-[8]'>
+                        <Image src={data.profile.enterpriselogo} alt='Logo de PhotoDroner76' width={150} height={100} sizes='30vw'/>
+                    </Link>
+                }
+            </div>
+            <div className='w-10/12 flex justify-end items-center sm:mt-[-5px]'>
+                <Navbar menuOpened={menuOpened} onLinkClick={handleLinkClick}/>
+                <div className='flex justify-end w-[40] h-[100px] md:h-[50px] sm:h-[30px] items-center' onClick={() => handleClick()}>
+                    <CrossButton menuOpened={menuOpened}/>
                 </div>
-                <div className='w-10/12 flex justify-end items-center sm:mt-[-5px]'>
-                    <Navbar menuOpened={menuOpened} onLinkClick={handleLinkClick}/>
-                    <div className='flex justify-end w-[40] h-[100px] md:h-[50px] sm:h-[30px] items-center' onClick={() => handleClick()}>
-                        <CrossButton menuOpened={menuOpened}/>
-                    </div>
-                </div>
+            </div>
         </motion.header>
     )
 }
