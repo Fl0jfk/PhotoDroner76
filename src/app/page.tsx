@@ -22,7 +22,7 @@ export default function Home() {
           <AnimatePresence>
             <BackgroundImage/>
             <Header/>
-            <div className='flex absolute left-4 xl:bottom-[30%] lg:bottom-[30%] md:bottom-[30%] h-[350px] w-full sm:flex-col sm:left-0 sm:gap-8 sm:relative'>
+            <div className='flex absolute left-4 xl:bottom-[30%] lg:bottom-[30%] md:bottom-[30%] w-full sm:flex-col sm:left-0 sm:gap-8'>
               <InfoProject/>
               <Slides/> 
             </div>
