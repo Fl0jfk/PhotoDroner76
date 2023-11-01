@@ -13,7 +13,7 @@ function InfoProject() {
     return (
       <>
         {dataToDisplay && 
-            <section className="flex flex-col gap-4 w-[35%] sm:w-full sm:items-center sm:gap-2">
+            <section className="flex flex-col gap-4 w-[35%] sm:w-full sm:items-center sm:mt-[20vh]">
                 <motion.span layout className=" mb-2 h-1 w-5 rounded-full bg-white sm:hidden"/>
                 <p className="text-4xl sm:pt-[50px] sm:text-2xl">{dataToDisplay.location}</p>
                 <h2 className="text-[120px] lg:text-[100px] md:text-[80px] sm:text-[80px]">{dataToDisplay.title}</h2>
