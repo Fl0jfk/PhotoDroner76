@@ -40,7 +40,7 @@ function Navbar({menuOpened, onLinkClick} :NavbarProps ){
                         </Link>
                         }
                     </div>
-                    <Link className='hover:scale-110' href="/skills" onClick={handleLinkClick} aria-label="Link to section Skills">Nos services</Link>
+                    <Link className='hover:scale-110' href="/services" onClick={handleLinkClick} aria-label="Link to section Services">Nos services</Link>
                     <Link className='hover:scale-110' href="/about" onClick={handleLinkClick} aria-label="Link to section About">À propos</Link>
                     <Link className='hover:scale-110' href="/contact" onClick={handleLinkClick} aria-label="Link to section Contact">Contact</Link>
                     <div className='flex gap-4'>
@@ -64,7 +64,7 @@ function Navbar({menuOpened, onLinkClick} :NavbarProps ){
                 }
             </AnimatePresence>
             <nav style={{background: `${bgMenuOpen}`}} className={`flex gap-6 text-2xl xl:mr-8 lg:mr-8 sm:hidden md:hidden z-[9]`}>
-                <Link className='hover:scale-110' href="/skills" aria-label="Link to section Skills">Nos services</Link>
+                <Link className='hover:scale-110' href="/services" aria-label="Link to section Services">Nos services</Link>
                 <Link className='hover:scale-110' href="/about" aria-label="Link to section About">À propos</Link>
                 <Link className='hover:scale-110' href="/contact" aria-label="Link to section Contact">Contact</Link>
             </nav>
