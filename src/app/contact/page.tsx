@@ -3,6 +3,7 @@
 import { DataProvider } from '@/app/contexts/data';
 import { AnimatePresence } from 'framer-motion';
 import Header from '@/app/components/header/Header';
+import Footer from '../components/footer/Footer';
 import ContactComponent from '@/app/components/contact/ContactComponent';
 
 import Head from 'next/head';
@@ -18,6 +19,7 @@ export default function Contact() {
             <AnimatePresence>
               <Header/>
               <ContactComponent/>
+              <Footer/>
             </AnimatePresence>
           </main>
       </DataProvider>
