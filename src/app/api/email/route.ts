@@ -7,15 +7,6 @@ export async function POST(request: NextRequest) {
 
   const transport = nodemailer.createTransport({
     service: 'gmail',
-    /* 
-      setting service as 'gmail' is same as providing these setings:
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true
-      If you want to use a different email provider other than gmail, you need to provide these manually.
-      Or you can go use these well known services and their settings at
-      https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
-  */
       auth: {
         user: process.env.MY_EMAIL,
         pass: process.env.MY_PASSWORD,
@@ -26,7 +17,7 @@ export async function POST(request: NextRequest) {
       from: process.env.MY_EMAIL,
       to: process.env.MY_EMAIL,
       // cc: email, (uncomment this line if you want to send a copy to the sender)
-      subject: `Message from ${name} (${email})`,
+      subject: `Vous avez reçu un mail de ${name} ${email} depuis votre site internet.`,
       text: message,
     };
   
@@ -34,7 +25,7 @@ export async function POST(request: NextRequest) {
       new Promise<string>((resolve, reject) => {
         transport.sendMail(mailOptions, function (err) {
           if (!err) {
-            resolve('Email sent');
+            resolve('Email envoyé');
           } else {
             reject(err.message);
           }
@@ -43,7 +34,7 @@ export async function POST(request: NextRequest) {
   
     try {
       await sendMailPromise();
-      return NextResponse.json({ message: 'Email sent' });
+      return NextResponse.json({ message: 'Email envoyé' });
     } catch (err) {
       return NextResponse.json({ error: err }, { status: 500 });
     }
