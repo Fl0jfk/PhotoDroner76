@@ -231,5 +231,23 @@
             ],
             "description": "Prise de vue sur un barrage."
         }
+    ],
+    "diplomas" : [
+        {
+            "id":1,
+            "name": "Formation, préparation au certificat d'aptitude théorique de télépilote",
+            "date": "Mai 2021",
+            "organism": "Drone by Lukas - Ecole de pilotage à Paris",
+            "logoOrganism": "https://photodroner76.s3.eu-west-3.amazonaws.com/assets/diplomas/dronebylukas-min.jpg",
+            "linkOrganism": "https://dronebylukas.fr"
+        },
+        {
+            "id":2,
+            "name": "Certificat d'Aptitude Théorique Télépilote",
+            "date": "Juillet 2021",
+            "organism": "Direction Generale de l'Aviation Civile",
+            "logoOrganism": "https://photodroner76.s3.eu-west-3.amazonaws.com/assets/diplomas/DGAC.svg.png",
+            "linkOrganism": "https://demarches-portailpn.aviation-civile.gouv.fr/loc_fr/dgac/"
+        }
     ]
 }

@@ -3,12 +3,10 @@ import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { Project } from "../../contexts/data";
 import { clickProject } from "../../redux/slices/projectSlice";
-import { ProjectState } from "../../redux/slices/projectSlice";
 import Image from "next/image";
 
-function SliderCard({ id, type, date, title, location, imageMiniature, imageBackground, video, pictures }: Project) {
+function SliderCard({ id, title, location, imageMiniature }: Project) {
   const dispatch = useDispatch();
-  const test = useSelector((state:ProjectState) => state.project.id);
   return ( 
     <motion.div
       className="relative min-w-[200px] h-[350px] rounded-2xl shadow-md cursor-pointer ml-6" 

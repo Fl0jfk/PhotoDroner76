@@ -16,7 +16,7 @@ function ContactComponent () {
     function onSubmit(data: FormData) {
         sendEmail(data);
     }
-    const whatPage = (pathname === "/contact" ? "w-full flex items-center absolute top-[20vh] self-center justify-center" : "w-full flex items-center sm:absolute sm:top-[110vh] sm:self-center sm:justify-center")
+    const whatPage = (pathname === "/contact" ? "w-full flex items-center absolute sm:top-[20vh] top-[25vh] self-center justify-center" : "w-full flex items-center sm:absolute sm:top-[110vh] sm:self-center sm:justify-center")
     return (
         <section className={whatPage}>
                 <form onSubmit={handleSubmit(onSubmit)}>

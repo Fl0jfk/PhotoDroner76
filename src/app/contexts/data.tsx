@@ -22,9 +22,19 @@ export type Project = {
     description: string;
 };
 
+export type Diplomas = {
+  id: number;
+  name: string;
+  date: string;
+  organism: string;
+  logoOrganism: string;
+  linkOrganism: string;
+};
+
 export type Data = {
   profile: Profile;
   projects: Project[];
+  diplomas: Diplomas[];
   error: Error | null;
 };
 
@@ -38,6 +48,7 @@ const initialData: Data = {
     enterpriseadress: ""
   },
   projects: [],
+  diplomas: [],
   error: null
 };
 
