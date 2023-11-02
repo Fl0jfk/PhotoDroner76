@@ -1,4 +1,4 @@
-import { FormData } from "../components/contact/Contact";
+import { FormData } from "../components/contact/ContactComponent";
 
 export function sendEmail(data: FormData) {
   const apiEndpoint = '/api/email';

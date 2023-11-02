@@ -2,6 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '@/app/utils/send-email';
+import { usePathname } from 'next/navigation';
 
 export type FormData = {
   name: string;
@@ -9,13 +10,15 @@ export type FormData = {
   message: string;
 };
 
-function Contact () {
+function ContactComponent () {
     const { register, handleSubmit } = useForm<FormData>();
+    const pathname = usePathname();
     function onSubmit(data: FormData) {
         sendEmail(data);
     }
+    const whatPage = (pathname === "/contact" ? "w-full flex items-center absolute top-[20vh] self-center justify-center" : "w-full flex items-center sm:absolute sm:top-[110vh] sm:self-center sm:justify-center")
     return (
-        <section className='w-full flex items-center sm:absolute sm:top-[110vh] sm:self-center sm:justify-center'>
+        <section className={whatPage}>
                 <form onSubmit={handleSubmit(onSubmit)}>
             <div className='mb-5'>
                 <label htmlFor='name' className='mb-3 block text-base font-medium'>
@@ -60,4 +63,4 @@ function Contact () {
     );
 };
 
-export default Contact;
+export default ContactComponent;

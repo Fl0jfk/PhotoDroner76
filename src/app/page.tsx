@@ -5,10 +5,9 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/header/Header";
-import Footer from './components/footer/Footer';
 import BackgroundImage from "./components/backgroundproject/BackgroundProject";
 import Slides from "./components/slider/Slides";
-import Contact from './components/contact/Contact';
+import Contact from './components/contact/ContactComponent';
 import InfoProject from './components/infoproject/InfoProject';
 import Head from 'next/head';
 
@@ -27,9 +26,10 @@ export default function Home() {
             <div className='flex absolute left-4 xl:top-[30%] lg:top-[30%] md:top-[30%] w-full sm:flex-col sm:left-0 sm:gap-12 z-2'>
               <InfoProject/>
               <Slides/>
-              <Contact/>
+              <div className='xl:hidden lg:hidden md:hidden'>
+                <Contact/>
+              </div>
             </div>
-            
           </AnimatePresence>
         </main>
       </Provider>
