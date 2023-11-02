@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/header/Header";
+import Footer from './components/footer/Footer';
 import BackgroundImage from "./components/backgroundproject/BackgroundProject";
 import Slides from "./components/slider/Slides";
 import Contact from './components/contact/ContactComponent';
@@ -30,6 +31,7 @@ export default function Home() {
                 <Contact/>
               </div>
             </div>
+            <Footer/>
           </AnimatePresence>
         </main>
       </Provider>
