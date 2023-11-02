@@ -15,7 +15,8 @@ function Contact () {
         sendEmail(data);
     }
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='sm:absolute sm:top-[110vh]'>
+        <section className='w-full flex items-center sm:absolute sm:top-[110vh] sm:self-center sm:justify-center'>
+                <form onSubmit={handleSubmit(onSubmit)}>
             <div className='mb-5'>
                 <label htmlFor='name' className='mb-3 block text-base font-medium'>
                     Votre nom et prénom
@@ -55,6 +56,7 @@ function Contact () {
                 </button>
             </div>
         </form>
+        </section>
     );
 };
 

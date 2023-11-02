@@ -8,6 +8,7 @@ import Header from "./components/header/Header";
 import Footer from './components/footer/Footer';
 import BackgroundImage from "./components/backgroundproject/BackgroundProject";
 import Slides from "./components/slider/Slides";
+import Contact from './components/contact/Contact';
 import InfoProject from './components/infoproject/InfoProject';
 import Head from 'next/head';
 
@@ -23,11 +24,12 @@ export default function Home() {
           <AnimatePresence>
             <BackgroundImage/>
             <Header/>
-            <div className='flex absolute left-4 xl:bottom-[30%] lg:bottom-[30%] md:bottom-[30%] w-full sm:flex-col sm:left-0 sm:gap-12'>
+            <div className='flex absolute left-4 xl:top-[30%] lg:top-[30%] md:top-[30%] w-full sm:flex-col sm:left-0 sm:gap-12 z-2'>
               <InfoProject/>
-              <Slides/> 
+              <Slides/>
+              <Contact/>
             </div>
-            <Footer/>
+            
           </AnimatePresence>
         </main>
       </Provider>

@@ -13,12 +13,12 @@ function InfoProject() {
     return (
       <>
         {dataToDisplay && 
-            <section className="flex flex-col gap-4 w-[35%] sm:w-full sm:items-center sm:mt-[5vh] sm:gap-3">
+            <section className="flex flex-col gap-4 w-[35%] sm:w-full sm:items-center sm:mt-[5vh] sm:gap-3 z-2">
                 <motion.span layout className=" mb-2 h-1 w-5 rounded-full bg-white sm:hidden"/>
                 <p className="text-4xl sm:pt-[50px] sm:text-2xl">{dataToDisplay.location}</p>
                 <h2 className="text-[120px] lg:text-[100px] md:text-[80px] sm:text-[80px] sm:h-[90px] sm:leading-[90px]">{dataToDisplay.title}</h2>
                 <p className="text-2xl">{dataToDisplay.description}</p>
-                <Link className="w-fit rounded-full border-[1px] border-[#ffffff8f] px-6 py-3 text-[15px] text-white font-thin transition duration-300 ease-in-out hover:bg-white hover:text-black" href={`project${dataToDisplay.id}`}>DECOUVREZ CE PROJET</Link>
+                <Link className="w-fit rounded-full border-[1px] border-[#ffffff8f] px-6 py-3 text-[15px] text-white font-thin transition duration-300 ease-in-out hover:bg-white hover:text-black active:bg-white active:text-black" href={`project${dataToDisplay.id}`}>DECOUVREZ CE PROJET</Link>
             </section> 
         }
       </>
