@@ -9,7 +9,7 @@ function SliderCard({ id, title, location, imageMiniature }: Project) {
   const dispatch = useDispatch();
   return ( 
     <motion.div
-      className="relative min-w-[200px] h-[350px] rounded-2xl shadow-md cursor-pointer ml-6 hover:scale-125 overflow-hidden duration-300" 
+      className="relative min-w-[200px] h-[350px] rounded-2xl shadow-md cursor-pointer ml-6 hover:scale-125 active:scale-125 overflow-hidden duration-300" 
       layout 
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{scale: 1, opacity: 1,transition:{duration: 0.4,}}}
@@ -17,16 +17,16 @@ function SliderCard({ id, title, location, imageMiniature }: Project) {
       transition={{ type: "spring", damping: 20, stiffness: 100}}
       onClick={()=> {dispatch(clickProject(id))}}
       >  
-      <motion.div className="hover:scale-110 absolute h-full w-full duration-300">
+      <motion.div className="hover:scale-110 active:scale-110 absolute h-full w-full duration-300">
         <Image src={imageMiniature} alt={`Image du projet ${title}`} fill sizes="50vw" className="rounded-2xl object-cover"/>
       </motion.div>
       <motion.div className=" absolute z-10 flex h-full items-end p-4">
         <motion.div>
           <motion.div layout className=" mb-2 h-[2px] w-3 rounded-full bg-white"></motion.div>
-          <motion.p  className="text-xs text-[#D5D5D6]">
+          <motion.p className="text-xs text-[#D5D5D6]">
             {location}
           </motion.p>
-          <motion.h1  className="text-xl leading-6 text-white">
+          <motion.h1 className="text-xl leading-6 text-white">
             {title}
           </motion.h1>
         </motion.div>

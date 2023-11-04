@@ -12,6 +12,8 @@ function CrossButton({menuOpened}: CrossButton ){
     useEffect(() => {
         if(menuOpened === false){
             setButtonGo(true);
+        } else {
+            setButtonGo(false);
         }
     }, [menuOpened])
     return (
