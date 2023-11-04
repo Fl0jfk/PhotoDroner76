@@ -15,7 +15,7 @@ export default function Services() {
           <title>Page de nos services du site PhotoDroner76</title>
       </Head>
       <DataProvider>
-          <main className={`relative h-full min-h-[100vh] min-w-[100vw] w-full select-none xl:overflow-hidden lg:overflow-hidden md:overflow-hidden text-white antialiased bg-black`}>
+          <main className={`relative h-full min-w-[100vw] w-full sm:min-h-[300vh] min-h-[250vh] select-none xl:overflow-hidden lg:overflow-hidden md:overflow-hidden text-white antialiased bg-black`}>
             <AnimatePresence>
               <Header/>
                 <ServicesComponent/>

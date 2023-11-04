@@ -31,10 +31,19 @@ export type Diplomas = {
   linkOrganism: string;
 };
 
+export type Services = {
+  id: number;
+  name: string;
+  imageBackground: string;
+  description: string;
+  pictures: [id: string, image: string];
+};
+
 export type Data = {
   profile: Profile;
   projects: Project[];
   diplomas: Diplomas[];
+  services: Services[];
   error: Error | null;
 };
 
@@ -49,6 +58,7 @@ const initialData: Data = {
   },
   projects: [],
   diplomas: [],
+  services: [],
   error: null
 };
 
