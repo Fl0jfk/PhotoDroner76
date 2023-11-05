@@ -36,7 +36,7 @@ export type Services = {
   name: string;
   imageBackground: string;
   description: string;
-  pictures: [id: string, image: string];
+  pictures: Array<{ id: number, image: string }>;
 };
 
 export type Data = {
