@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.19.2",
     "@reduxjs/toolkit": "latest",
     "@types/nodemailer": "latest",
     "framer-motion": "latest",
