@@ -14,7 +14,7 @@ export default function Map() {
     const data = useData();
     
   return (
-      <GoogleMap zoom={9} center={center} mapContainerClassName="w-[40vw] sm:w-[70vw] h-[450px] rounded-xl sm:mx-auto top-[17vh] md:top-[30vh] xl:left-[50vw] lg:left-[50vw] md:left-[55vw] sm:top-[70vh]" options={{ disableDefaultUI: true }}>
+      <GoogleMap zoom={9} center={center} mapContainerClassName="w-[40vw] sm:w-[70vw] h-[450px] rounded-xl sm:mx-auto top-[10vh] md:top-[30vh] xl:left-[50vw] lg:left-[50vw] md:left-[55vw] sm:top-[70vh]" options={{ disableDefaultUI: true }}>
           {data.profile.enterpriselogo&&<Marker position={center} icon={{url: data.profile.enterpriselogo, scaledSize: new window.google.maps.Size(80, 80),}}/>}
       </GoogleMap>
     );
