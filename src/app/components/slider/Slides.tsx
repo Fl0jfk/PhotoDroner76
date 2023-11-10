@@ -1,6 +1,7 @@
 import { useData } from "../../contexts/data";
 import SliderCard from "./SliderCard";
 import { useState, useRef } from "react";
+import { motion} from "framer-motion";
 
 function Slides() {
   const data = useData();
@@ -25,22 +26,30 @@ function Slides() {
     const newScrollLeft = scrollLeft - diffX;
     containerRef.current.scrollLeft = newScrollLeft;
   };
+  const wrapperVariants = {
+    visible: {opacity: 1, transition:{when:'beforeChildren'}},
+    hidden: {opacity:0,transition:{when:'afterChildren',staggerChildren: .5}}
+  }
   return (
     <>
       {data.projects &&
         <section className="flex flex-col gap-4 max-w-[1500px] w-[65%] bottom-[30%] sm:w-full">
-            <div 
+            <motion.div 
               className="flex snap-mandatory overflow-x-scroll snap-x select-none cursor-grab"
               ref={containerRef}
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
               onMouseMove={handleMouseMove}
+              variants={wrapperVariants}
+              animate={'visible'}
+              initial={'hidden'}
+              exit={'hidden'}
             >
               {data.projects.map((project) => {
                 return <SliderCard key={project.id} id={project.id} type={project.type} date={project.date} title={project.title} location={project.location} imageMiniature={project.imageMiniature} imageBackground={project.imageBackground} video={project.video} pictures={project.pictures} description={project.description}/>
               })}
-            </div>
+            </motion.div>
         </section>   
       }
     </>

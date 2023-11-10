@@ -7,22 +7,18 @@ import Image from "next/image";
 
 function SliderCard({ id, title, location, imageMiniature }: Project) {
   const dispatch = useDispatch();
+  const cardVariants ={
+    visible: { x:0, rotate:0 },
+    hidden :{ x:300, rotate:180 }
+  }
   return ( 
-    <motion.div
-      className="relative min-w-[200px] h-[350px] rounded-2xl shadow-md cursor-pointer ml-6 hover:scale-125 active:scale-125 overflow-hidden duration-300" 
-      layout 
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{scale: 1, opacity: 1,transition:{duration: 0.4,}}}
-      exit={{ scale: 0.8, opacity: 0 }}
-      transition={{ type: "spring", damping: 20, stiffness: 100}}
-      onClick={()=> {dispatch(clickProject(id))}}
-      >  
-      <motion.div className="hover:scale-110 active:scale-110 absolute h-full w-full duration-300">
+    <motion.div className="relative min-w-[200px] h-[350px] rounded-2xl shadow-md cursor-pointer ml-6 hover:scale-x-110 duration-300" variants={cardVariants} onClick={()=> {dispatch(clickProject(id))}}>  
+      <motion.div className="absolute h-full w-full overflow-hidden rounded-2xl">
         <Image src={imageMiniature} alt={`Image du projet ${title}`} fill sizes="50vw" className="rounded-2xl object-cover"/>
       </motion.div>
-      <motion.div className=" absolute z-10 flex h-full items-end p-4">
+      <motion.div className="absolute z-10 flex h-full items-end p-4">
         <motion.div>
-          <motion.div layout className=" mb-2 h-[2px] w-3 rounded-full bg-white"></motion.div>
+          <motion.div className=" mb-2 h-[2px] w-3 rounded-full bg-white"></motion.div>
           <motion.p className="text-xs text-[#D5D5D6]">
             {location}
           </motion.p>

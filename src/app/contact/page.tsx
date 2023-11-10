@@ -19,8 +19,10 @@ export default function Contact() {
             <AnimatePresence>
               <Header/>
                 <h1 className='text-6xl sm:text-5xl w-full text-center sm:pt-[10vh] md:pt-[10vh]'>Contactez-nous</h1>
-                <ContactComponent/>
-                <Map/>
+                <div className='flex sm:flex-col items-center justify-center w-[100vw]'>
+                  <ContactComponent/>
+                  <Map/>
+                </div>
               <Footer/>
             </AnimatePresence>
           </main>
