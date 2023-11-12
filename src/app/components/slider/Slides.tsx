@@ -26,10 +26,6 @@ function Slides() {
     const newScrollLeft = scrollLeft - diffX;
     containerRef.current.scrollLeft = newScrollLeft;
   };
-  const wrapperVariants = {
-    visible: {opacity: 1, transition:{when:'beforeChildren'}},
-    hidden: {opacity:0,transition:{when:'afterChildren',staggerChildren: .5}}
-  }
   return (
     <>
       {data.projects &&
@@ -41,10 +37,6 @@ function Slides() {
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
               onMouseMove={handleMouseMove}
-              variants={wrapperVariants}
-              animate={'visible'}
-              initial={'hidden'}
-              exit={'hidden'}
             >
               {data.projects.map((project) => {
                 return <SliderCard key={project.id} id={project.id} type={project.type} date={project.date} title={project.title} location={project.location} imageMiniature={project.imageMiniature} imageBackground={project.imageBackground} video={project.video} pictures={project.pictures} description={project.description}/>

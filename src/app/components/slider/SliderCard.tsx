@@ -4,16 +4,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { Project } from "../../contexts/data";
 import { clickProject } from "../../redux/slices/projectSlice";
 import Image from "next/image";
+import { type } from "os";
 
 function SliderCard({ id, title, location, imageMiniature }: Project) {
   const dispatch = useDispatch();
+  const wrapperVariants = {
+    visible: {transition:{when:'beforeChildren'}},
+    hidden: {transition:{when:'afterChildren',staggerChildren: 0.8}}
+  }
   const cardVariants ={
-    visible: { x:0, rotate:0 },
-    hidden :{ x:300, rotate:180 }
+    visible: { y:0},
+    hidden :{ y:500}
   }
   return ( 
-    <motion.div className="relative min-w-[200px] h-[350px] rounded-2xl shadow-md cursor-pointer ml-6 hover:scale-x-110 duration-300" variants={cardVariants} onClick={()=> {dispatch(clickProject(id))}}>  
-      <motion.div className="absolute h-full w-full overflow-hidden rounded-2xl">
+    <motion.div className="relative min-w-[200px] h-[350px] rounded-2xl shadow-md cursor-pointer ml-6 hover:scale-x-110 duration-300" 
+      variants={wrapperVariants} 
+      animate={'visible'}
+      initial={'hidden'}
+      exit={'hidden'}
+      onClick={()=> {dispatch(clickProject(id))}}
+    >  
+      <motion.div className="absolute h-full w-full overflow-hidden rounded-2xl" variants={cardVariants} animate={'visible'} exit={'hidden'} initial={'hidden'}>
         <Image src={imageMiniature} alt={`Image du projet ${title}`} fill sizes="50vw" className="rounded-2xl object-cover"/>
       </motion.div>
       <motion.div className="absolute z-10 flex h-full items-end p-4">
